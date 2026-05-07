@@ -28,6 +28,12 @@ const banners = [
     src: '/banner-forza3.png',
     alt: 'Banner Forza 3 - Forza Sport',
     link: '/search'
+  },
+  {
+    id: 5,
+    src: '/banner-forza-cali.png',
+    alt: 'Banner Forza Cali - Forza Sport',
+    link: '/search'
   }
 ];
 
