@@ -7,30 +7,18 @@ import Link from 'next/link';
 const banners = [
   {
     id: 1,
-    src: '/banner-forza.png',
-    alt: 'Banner Forza - Forza Sport',
+    src: '/banner-forza-cali.png',
+    alt: 'Banner Forza Cali - Forza Sport',
     link: '/search'
   },
   {
     id: 2,
-    src: '/banner-forza1.png',
-    alt: 'Banner Forza 1 - Forza Sport',
+    src: '/banner-forza-cali.png',
+    alt: 'Banner Forza Cali - Forza Sport',
     link: '/search'
   },
   {
     id: 3,
-    src: '/banner-forza2.png',
-    alt: 'Banner Forza 2 - Forza Sport',
-    link: '/search'
-  },
-  {
-    id: 4,
-    src: '/banner-forza3.png',
-    alt: 'Banner Forza 3 - Forza Sport',
-    link: '/search'
-  },
-  {
-    id: 5,
     src: '/banner-forza-cali.png',
     alt: 'Banner Forza Cali - Forza Sport',
     link: '/search'
