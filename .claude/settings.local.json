@@ -34,7 +34,8 @@
       "Bash(ssh -T git@github.com -i ~/.ssh/id_ed25519_shark)",
       "Bash(cat > *)",
       "Bash(Remove-Item -Recurse -Force .git)",
-      "Bash(cd \"d:/12.Freelance/Nuevo sitio web de cafe/salvame\" && rm -rf .git && echo \"Carpeta .git eliminada\")"
+      "Bash(cd \"d:/12.Freelance/Nuevo sitio web de cafe/salvame\" && rm -rf .git && echo \"Carpeta .git eliminada\")",
+      "Bash(git remote *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\basti\\.ssh",
