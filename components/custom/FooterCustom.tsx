@@ -49,7 +49,7 @@ export default function Footer() {
               Tu tienda online de confianza. Deportes, fitness y accesorios deportivos con los mejores productos y precios.
             </p>
             <div className="flex space-x-4">
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <a href="https://www.instagram.com/forzasport_cali/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
