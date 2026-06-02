@@ -33,9 +33,19 @@ export function RecentlyViewedProducts({
     return null;
   }
 
+  // Helper: formatea el precio removiendo el bug del &nbsp; entre $ y el número
+  const formatPrice = (rawPrice: string): string => {
+    // Extrae solo dígitos del string (ej: "$&nbsp;190.000" o "$ 190.000" → "190000")
+    const numeric = rawPrice.replace(/[^\d]/g, '');
+    if (!numeric) return rawPrice;
+    // Formatea con separador de miles y devuelve con espacio explícito (no nbsp)
+    const formatted = parseInt(numeric, 10).toLocaleString('es-CO');
+    return `$ ${formatted}`;
+  };
+
   return (
-    <section className="border-t border-gray-200 mt-16 pt-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="border-t border-neutral-800 mt-16 pt-12 bg-neutral-900 pb-12 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
         <div className="flex items-center justify-between mb-8">
           <h2 className="font-belleza text-2xl font-light tracking-wide text-white">
             {title}
@@ -43,7 +53,7 @@ export function RecentlyViewedProducts({
           {productsToShow.length >= maxProducts && (
             <Link
               href="/search"
-              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-sm text-neutral-400 hover:text-white transition-colors"
             >
               Ver todo →
             </Link>
@@ -55,10 +65,10 @@ export function RecentlyViewedProducts({
             <Link
               key={product.id}
               href={`/product/${product.slug}`}
-              className="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="group block bg-neutral-800 rounded-lg shadow-md hover:shadow-2xl hover:shadow-[#34efc2]/20 transition-all duration-300 overflow-hidden border border-neutral-700 hover:border-[#34efc2]"
             >
               {/* Imagen - misma relación que el catálogo */}
-              <div className="relative aspect-[3/4] overflow-hidden bg-gray-100">
+              <div className="relative aspect-[3/4] overflow-hidden bg-neutral-700">
                 {product.image ? (
                   <Image
                     src={product.image}
@@ -68,7 +78,7 @@ export function RecentlyViewedProducts({
                     sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gray-200 text-gray-400">
+                  <div className="w-full h-full flex items-center justify-center bg-neutral-700 text-neutral-500">
                     Sin imagen
                   </div>
                 )}
@@ -76,12 +86,12 @@ export function RecentlyViewedProducts({
 
               {/* Info - mismo estilo que el catálogo */}
               <div className="p-4">
-                <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-green-700 transition-colors">
+                <h3 className="font-semibold text-white mb-2 line-clamp-2 group-hover:text-[#34efc2] transition-colors">
                   {product.name}
                 </h3>
                 {product.price && (
-                  <p className="text-lg text-gray-700 font-medium">
-                    {product.price}
+                  <p className="text-lg text-neutral-300 font-medium">
+                    {formatPrice(product.price)}
                   </p>
                 )}
               </div>

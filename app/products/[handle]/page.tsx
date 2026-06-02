@@ -156,9 +156,9 @@ async function RelatedProducts({ id }: { id: string }) {
   if (!relatedProducts.length) return null;
 
   return (
-    <div className="py-16 bg-gray-50">
+    <div className="py-16 bg-neutral-900">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
-        <h2 className="font-belleza text-2xl lg:text-3xl font-light tracking-wide mb-10 text-gray-900 text-center">
+        <h2 className="font-belleza text-2xl lg:text-3xl font-light tracking-wide mb-10 text-white text-center">
           También podría gustarte
         </h2>
         <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-3">
@@ -169,7 +169,7 @@ async function RelatedProducts({ id }: { id: string }) {
               className="group relative block product-card"
               prefetch={true}
             >
-              <div className="aspect-[3/4] overflow-hidden bg-gray-100 relative mb-3 rounded-sm">
+              <div className="aspect-[3/4] overflow-hidden bg-neutral-800 relative mb-3 rounded-sm">
                 {product.featuredImage && (
                   <NextImage
                     src={product.featuredImage.url}
@@ -193,11 +193,11 @@ async function RelatedProducts({ id }: { id: string }) {
 
               {/* Info debajo de la imagen - estilo Versace */}
               <div className="text-left">
-                <h3 className="font-belleza text-sm font-light text-gray-900 tracking-wide mb-1">
+                <h3 className="font-belleza text-sm font-light text-white tracking-wide mb-1">
                   {product.title}
                 </h3>
-                <p className="font-moderat text-sm font-semibold text-gray-900">
-                  ${parseFloat(product.priceRange.maxVariantPrice.amount).toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
+                <p className="font-moderat text-sm font-semibold text-white">
+                  {`$ ${parseFloat(product.priceRange.maxVariantPrice.amount).toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`}
                 </p>
               </div>
             </Link>
